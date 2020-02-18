@@ -1,0 +1,64 @@
+{
+  "name": "clappr-mseld",
+  "version": "0.0.1",
+  "description": "flussonic mseld plugin for Clappr",
+  "main": "dist/clappr-mseld.min.js",
+  "babel": {
+    "presets": [
+      [
+        "@babel/env",
+        {
+          "modules": false
+        }
+      ]
+    ],
+    "env": {
+      "production": {
+        "presets": [
+          "minify"
+        ]
+      }
+    },
+    "plugins": [
+      "@babel/plugin-external-helpers"
+    ]
+  },
+  "dependencies": {
+    "@flussonic/flussonic-mse-player": "git+ssh://git@git.erlyvideo.ru/flussonic/mse-player.git#v20.2.3",
+    "clappr": "0.2.57",
+    "kaleidoscopejs": "^1.1.1",
+    "whatwg-fetch": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.5",
+    "@babel/plugin-external-helpers": "^7.0.0",
+    "@babel/preset-env": "^7.1.5",
+    "babel-preset-minify": "^0.5.0",
+    "cross-env": "^7.0.0",
+    "rollup": "^0.67.0",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-strip": "^1.2.0",
+    "rollup-plugin-uglify": "^6.0.0",
+    "sinon": "^7.1.1",
+    "uglify-js": "^3.4.9",
+    "webpack": "^3.11.0"
+  },
+  "scripts": {
+    "build": "cross-env BABEL_ENV=production rollup -c && cat dist/clappr-mseld.js | uglifyjs -m -c > dist/clappr-mseld.min.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Atak3n/clappr-mseld.git"
+  },
+  "keywords": [
+    "clappr",
+    "flussonic",
+    "mseld"
+  ],
+  "author": "Andrey Machinskiy",
+  "license": "MIT",
+  "homepage": "https://github.com/Atak3n/clappr-mseld.git"
+}
